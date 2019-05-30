@@ -1,0 +1,85 @@
+{
+  "name": "vue-svg-layer",
+  "version": "0.1.0",
+  "author": "Thomas Bayet <bayet.thomas@gmail.com> (https://tbayet.fr)",
+  "license": "MIT",
+  "homepage": "https://tbayet.github.io/SVGLayer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tbayet/SVGLayer"
+  },
+  "keywords": [
+    "vue",
+    "component",
+    "svg",
+    "layer",
+    "animate",
+    "superpose",
+    "z-index",
+    "color",
+    "slide",
+    "image",
+    "framework",
+    "plugin"
+  ],
+  "scripts": {
+    "serve": "vue-cli-service serve 'src/main.js'",
+    "build": "vue-cli-service build --name vue-svg-layer 'src/components/VueSvgLayer.vue'",
+    "build-demo": "parcel build -d demo public/index.html",
+    "lint": "vue-cli-service lint",
+    "prepublish": "vue-cli-service lint && vue-cli-service build"
+  },
+  "main": "dist/vue-svg-layer.esm.js",
+  "module": "dist/vue-svg-layer.esm.js",
+  "unpkg": "dist/vue-svg-layer.umd.min.js",
+  "files": [
+    "dist/vue-svg-layer.common.js",
+    "dist/vue-svg-layer.umd.min.js",
+    "dist/vue-svg-layer.umd.js",
+    "dist/vue-svg-layer.esm.js",
+    "src"
+  ],
+  "dependencies": {
+    "core-js": "^2.6.5"
+  },
+  "devDependencies": {
+    "node-sass": "^4.12.0",
+    "@vue/cli-plugin-babel": "^3.7.0",
+    "@vue/cli-plugin-eslint": "^3.7.0",
+    "@vue/cli-service": "^3.7.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "sass": "^1.20.1",
+    "sass-loader": "^7.1.0",
+    "vue-cli-plugin-p11n": "^0.3.0",
+    "vue": "^2.6.10"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended",
+      "@vue/standard"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "jsdelivr": "dist/vue-svg-layer.umd.min.js",
+  "sideeffects": false
+}
