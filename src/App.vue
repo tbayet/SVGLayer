@@ -5,9 +5,7 @@
 </template>
 
 <script>
-// import VueSvgLayer from './components/VueSvgLayer'
-// import VueSvgLayer from 'vue-svg-layer'
-import VueSvgLayer from '../dist/vue-svg-layer2.esm.js'
+import VueSvgLayer from './components/VueSvgLayer'
 
 export default {
   name: 'app',
