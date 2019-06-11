@@ -3,7 +3,7 @@ A container displaying SVGs as masks in layers with dynamic colors and style bin
 
 ### [\[ demo here \]](https://tbayet.github.io/SVGLayer/)
 
-![Example](https://github.com/tbayet/SVGLayer/tree/master/src/assets/screenshot.png "Example")
+![Example](https://raw.githubusercontent.com/tbayet/SVGLayer/master/src/assets/screenshot.png "Example")
 
 ## Installation
 First install the package
