@@ -1,6 +1,6 @@
 {
   "name": "vue-svg-layer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Thomas Bayet <bayet.thomas@gmail.com> (https://tbayet.fr)",
   "license": "MIT",
   "homepage": "https://tbayet.github.io/SVGLayer",
@@ -25,7 +25,7 @@
   "scripts": {
     "serve": "vue-cli-service serve 'src/main.js'",
     "build": "vue-cli-service build --name vue-svg-layer 'src/components/VueSvgLayer.vue'",
-    "build-demo": "parcel build -d demo public/index.html",
+    "build-demo": "parcel build -d demo --public-url /SVGLayer/ public/index.html",
     "lint": "vue-cli-service lint",
     "prepublish": "vue-cli-service lint && vue-cli-service build"
   },
