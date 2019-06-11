@@ -7,21 +7,21 @@ var t=arguments[3];Object.defineProperty(exports,"__esModule",{value:!0}),export
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var t=e(require("./props"));function e(t){return t&&t.__esModule?t:{default:t}}function n(t){for(var e=1;e<arguments.length;e++){var n=null!=arguments[e]?arguments[e]:{},i=Object.keys(n);"function"==typeof Object.getOwnPropertySymbols&&(i=i.concat(Object.getOwnPropertySymbols(n).filter(function(t){return Object.getOwnPropertyDescriptor(n,t).enumerable}))),i.forEach(function(e){a(t,e,n[e])})}return t}function a(t,e,n){return e in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}var i="#000",o=t.default.paths,r=t.default.animation,s=t.default.speed,l=t.default.animationMode,u={name:"vue-svg-layer",props:{paths:o,animation:r,speed:s,animationMode:l},data:function(){return{backgroundColor:"transparent",formattedPaths:[]}},methods:{backgroundElemStyle:function(t){return""!==t.link?n({maskImage:"url(".concat(t.link,")"),maskSize:"auto 100%",maskRepeat:"repeat round",maskMode:"alpha"},t.style):t.style},animationStyle:function(t){return this.animation?{animationTimingFunction:"linear",animationIterationCount:"infinite",animationDuration:"".concat(this.speed+("alternate-delay"===this.animationMode?this.speed/t*this.speed/t/2:0),"s"),animationDirection:("alternate-delay"===this.animationMode||"alternate"===this.animationMode)&&t%2==0?"alternate-reverse":"alternate"}:{}}},created:function(){this.paths.length&&""===this.paths[0].link&&(this.backgroundColor=this.paths[0].style.backgroundColor||i,this.formattedPaths=this.paths.slice(1))}};exports.default=u;
 (function(){var t=exports.default||module.exports;"function"==typeof t&&(t=t.options),Object.assign(t,{render:function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",{staticClass:"background_container"},[n("div",{staticClass:"background_font_color",style:{backgroundColor:t.backgroundColor}},t._l(t.paths,function(e,o){return n("div",{key:"svg-"+o,staticClass:"background_elem anim_slideX",style:Object.assign({},t.backgroundElemStyle(e),t.animationStyle(o))})}),0)])},staticRenderFns:[],_compiled:!0,_scopeId:"data-v-db944d",functional:void 0});})();
 },{"./props":"UDfp"}],"kaKX":[function(require,module,exports) {
-module.exports="/sky2.350e57c0.svg";
+module.exports="/SVGLayer/sky2.350e57c0.svg";
 },{}],"A5m8":[function(require,module,exports) {
-module.exports="/sun.b5fbb8b6.svg";
+module.exports="/SVGLayer/sun.b5fbb8b6.svg";
 },{}],"U6YW":[function(require,module,exports) {
-module.exports="/sky1.3ebaf1ce.svg";
+module.exports="/SVGLayer/sky1.3ebaf1ce.svg";
 },{}],"zwEl":[function(require,module,exports) {
-module.exports="/horizon.2c9d4975.svg";
+module.exports="/SVGLayer/horizon.2c9d4975.svg";
 },{}],"ZcQg":[function(require,module,exports) {
-module.exports="/city2.a2554d92.svg";
+module.exports="/SVGLayer/city2.a2554d92.svg";
 },{}],"eO0D":[function(require,module,exports) {
-module.exports="/city1.dfe7ba69.svg";
+module.exports="/SVGLayer/city1.dfe7ba69.svg";
 },{}],"/3yu":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var e=r(require("./components/VueSvgLayer"));function r(e){return e&&e.__esModule?e:{default:e}}var s={name:"app",components:{VueSvgLayer:e.default},data:function(){return{paths:[{link:"",style:{zIndex:0,backgroundColor:"#EB8F5E"}},{link:require("./assets/backgroundSVG/sky2.svg"),style:{zIndex:0,backgroundColor:"#E5B395"}},{link:require("./assets/backgroundSVG/sun.svg"),style:{zIndex:8,maskRepeat:"no-repeat",maskSize:"auto 90%",backgroundColor:"#FBEFBF"}},{link:require("./assets/backgroundSVG/sky1.svg"),style:{zIndex:0,backgroundColor:"#B1766F"}},{link:require("./assets/backgroundSVG/horizon.svg"),style:{zIndex:0,backgroundColor:"#6EB3B6"}},{link:require("./assets/backgroundSVG/city2.svg"),style:{zIndex:0,backgroundColor:"#3F6E77"}},{link:require("./assets/backgroundSVG/city1.svg"),style:{zIndex:0,backgroundColor:"#242A37"}}]}}};exports.default=s;
 (function(){var t=exports.default||module.exports;"function"==typeof t&&(t=t.options),Object.assign(t,{render:function(){var t=this.$createElement,e=this._self._c||t;return e("div",{attrs:{id:"app"}},[e("vue-svg-layer",{attrs:{paths:this.paths,animationMode:"alternate-delay",animation:!0,speed:10}})],1)},staticRenderFns:[],_compiled:!0,_scopeId:"data-v-315094",functional:void 0});})();
 },{"./components/VueSvgLayer":"bGRd","./assets/backgroundSVG/sky2.svg":"kaKX","./assets/backgroundSVG/sun.svg":"A5m8","./assets/backgroundSVG/sky1.svg":"U6YW","./assets/backgroundSVG/horizon.svg":"zwEl","./assets/backgroundSVG/city2.svg":"ZcQg","./assets/backgroundSVG/city1.svg":"eO0D"}],"3WSm":[function(require,module,exports) {
 "use strict";var e=r(require("vue")),u=r(require("./App.vue"));function r(e){return e&&e.__esModule?e:{default:e}}e.default.config.productionTip=!1,new e.default({render:function(e){return e(u.default)}}).$mount("#app");
 },{"vue":"QPfz","./App.vue":"/3yu"}]},{},["3WSm"], null)
-//# sourceMappingURL=/main.907caf13.js.map
+//# sourceMappingURL=/SVGLayer/main.907caf13.js.map
