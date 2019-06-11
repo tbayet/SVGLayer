@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <vue-svg-layer :paths="paths" animationMode='alternate-delay' :animation="true" :speed="10"/>
+    <vue-svg-layer :paths="paths"></vue-svg-layer>
   </div>
 </template>
 

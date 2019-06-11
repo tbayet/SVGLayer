@@ -1,11 +1,12 @@
 .DS_Store
 node_modules
-public
 dist/*.gz
 dist/*.map
 demo/
 coverage
 docs/
+dist/
+.cache
 docs/.vuepress/dist
 
 # local env files

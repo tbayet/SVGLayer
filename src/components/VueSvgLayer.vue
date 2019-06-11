@@ -4,10 +4,9 @@
       backgroundColor: backgroundColor
     }">
       <div v-for="(path, i) in paths" :key="'svg-' + i"
-        class="background_elem anim_slideX"
+        class="background_elem"
         :style="{
           ...backgroundElemStyle(path),
-          ...animationStyle(i)
         }"
       >
       </div>
@@ -18,16 +17,13 @@
 <script>
 
 import propTypes from './props'
-const defaultColor = '#000'
-const { paths, animation, speed, animationMode } = propTypes
+const { paths, defaultColor } = propTypes
 
 export default {
   name: 'vue-svg-layer',
   props: {
     paths,
-    animation,
-    speed,
-    animationMode
+    defaultColor
   },
   data: () => ({
     backgroundColor: 'transparent',
@@ -44,26 +40,24 @@ export default {
           ...path.style
         }
         : path.style
-    },
-    animationStyle (index) {
-      if (!this.animation) {
-        return {}
-      }
-      return {
-        animationTimingFunction: 'linear',
-        animationIterationCount: 'infinite',
-        animationDuration:
-          `${this.speed + (this.animationMode === 'alternate-delay' ? (this.speed / index * this.speed / index) / 2 : 0)}s`,
-        animationDirection:
-          this.animationMode === 'alternate-delay' || this.animationMode === 'alternate'
-            ? (index % 2 === 0 ? 'alternate-reverse' : 'alternate')
-            : 'alternate'
-      }
     }
   },
   created () {
-    if (this.paths.length && this.paths[0].link === '') {
-      this.backgroundColor = this.paths[0].style.backgroundColor || defaultColor
+    this.formattedPaths = paths
+    if (typeof this.formattedPaths === 'string') {
+      this.formattedPaths = [{ link: this.formattedPaths.trim(), style: { backgroundColor: this.defaultColor } }]
+    } else if (typeof this.formattedPaths === 'object' && this.formattedPaths.length && !('link' in this.formattedPaths)) {
+      this.formattedPaths = this.formattedPaths.map(e => ({
+        link: e.length ? e[0] : '',
+        style: e.length > 1
+          ? typeof e[1] === 'object'
+            ? e[1]
+            : { backgroundColor: e[1] }
+          : { backgroundColor: this.defaultColor }
+      }))
+    }
+    if (this.paths.length && this.paths[0].link.trim() === '') {
+      this.backgroundColor = this.paths[0].style.backgroundColor || this.defaultColor
       this.formattedPaths = this.paths.slice(1)
     }
   }
@@ -71,10 +65,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@keyframes slideX {
-  from {mask-position: 0, 0; -webkit-mask-position: 0, 0}
-  to {mask-position: 500px, 0; -webkit-mask-position: 500px, 0}
-}
 
 .background_container {
   display: flex;
@@ -98,8 +88,5 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-}
-.anim_slideX {
-  animation-name: slideX;
 }
 </style>

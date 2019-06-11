@@ -1,30 +1,21 @@
 const propTypes = {
   paths: {
-    type: Array,
+    type: [String, Array],
     required: true,
-    validator: function (paths) {
-      return (
-        paths.reduce((acc, v, i) => acc && (typeof v === 'object' &&
-          'link' in v && 'style' in v && typeof v.link === 'string' &&
-          typeof v.style === 'object'
-        ), true)
-      )
-    }
+    validator: paths => (
+      typeof paths === 'object' || paths.reduce((acc, v, i) => acc &&
+      (
+        (typeof v === 'object' &&
+        ('link' in v && 'style' in v && typeof v.link === 'string' &&
+        typeof v.style === 'object')) ||
+        (v.length && typeof v[0] === 'string' && (v.length < 2 || typeof v[1] === 'object' || typeof v[1] === 'string'))
+      ), true)
+    )
   },
-  animation: {
-    type: Boolean,
-    default: false
-  },
-  speed: {
-    type: Number,
-    default: 40
-  },
-  animationMode: {
+  defaultColor: {
     type: String,
-    default: 'alternate-delay',
-    validator: function (a) {
-      return a === 'alternate-delay' || a === 'alternate' || a === 'linear'
-    }
+    required: false,
+    default: 'transparent'
   }
 }
 

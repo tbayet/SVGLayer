@@ -1,6 +1,9 @@
 # vue-svg-layer
+A container displaying SVGs as masks in layers with dynamic colors and style binding. Because it is always an hard task to deal with SVG, you know that.
 
 ### [\[ demo here \]](https://tbayet.github.io/SVGLayer/)
+
+![Example](https://github.com/tbayet/SVGLayer/tree/master/src/assets/screenshot.png "Example")
 
 ## Installation
 First install the package
@@ -11,12 +14,13 @@ npm install --save vue-svg-layer
 
 Then import it and use it
 
-```js
+```javascript
 import VueSvgLayer from 'vue-svg-layer'
 
 <template>
-	<vue-svg-layer :animation="true" :paths="paths" />
+	<vue-svg-layer :paths="paths" />
 </template>
+
 <script>
 export  default {
   name: 'app',
@@ -44,8 +48,16 @@ export  default {
 | prop | type | default | description |
 |--|--|--|---|
 | paths | Array [Object] | [{ link: 'assets/...', style: {} }] | all paths links with their style |
-| animation | Boolean | false | set animation to true |
-| speed | Number | 40 | set animation time in seconds |
-| animationMode | String | 'alternate-delay' | 'alternate-delay', 'alternate' or 'linear' |
+| defaultColor | String | 'transparent' | default color for background or 'unique svg' usage |
 
-path is required
+*(paths is required)*
+
+**You can provide different types for paths, see valid exemple of usage :**
+
+```javascript
+data: () => ({
+  paths: './assets/backgroundSVG/sky2.svg', // link for 'unique svg' usage
+  paths: ['./assets/backgroundSVG/sky2.svg', '#000000'], // link, fillColor
+  paths: ['./assets/backgroundSVG/sky2.svg', { backgroundColor: '#000000', ... }], // link, style object
+})
+```
